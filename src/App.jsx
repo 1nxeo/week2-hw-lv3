@@ -108,7 +108,12 @@ function App() {
             setList={setList}
             fav={fav}
             setFav={setFav}
-            style={{ position: "absolute", zIndex: "1" }}
+            style={{
+              position: "absolute",
+              top: "-20px",
+              left: "0",
+              zIndex: "2",
+            }}
           />
           <Dropdown
             list={list2}
