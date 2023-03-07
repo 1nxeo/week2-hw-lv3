@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+function Button({ children, ...rest }) {
+  return <StButton {...rest}>{children}</StButton>;
+}
+
 const StButton = styled.button`
   /* 기본 스타일 */
   display: flex;
@@ -20,9 +24,5 @@ const StButton = styled.button`
   color: ${(props) => (props.negative ? "#D63031" : "black")};
   font-weight: ${(props) => (props.bold ? "800" : "500")};
 `;
-
-function Button({ children, ...rest }) {
-  return <StButton {...rest}>{children}</StButton>;
-}
 
 export default Button;

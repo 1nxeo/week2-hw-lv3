@@ -11,14 +11,14 @@ function App() {
   // Input
   const [name, setName] = useState("");
   const [num, setNum] = useState(0);
-  const [num2, setNum2] = useState(0);
+
   const changeNum = (e) => {
     const val = e.target.value;
     const removedCommaValue = Number(val.replaceAll(",", ""));
     setNum(removedCommaValue.toLocaleString());
   };
   const savedAlarm = (e) => {
-    alert(`name : ${name}, price : ${parseInt(num.replace(",", ""))}`);
+    alert(`name : ${name}, price : ${num.replaceAll(",", "")}`);
   };
 
   //Modal
@@ -100,84 +100,9 @@ function App() {
           />
         </div>
       </div>
-
-      {/* <div
-        style={{
-          border: "2px solid lightgray",
-          height: "200px",
-          overflow: "hidden",
-          margin: "10px",
-          position: "relative",
-        }}
-      >
-        <h1>Select</h1>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <div>
-            <StSelctBtn
-              onClick={(e) => {
-                setList((pre) => !pre);
-                console.log(list);
-              }}
-            >
-              <div>{fav}</div>
-              <div>▼</div>
-            </StSelctBtn>
-            {list ? (
-              <div>
-                <OptionList visible>
-                  <OptionBtn onClick={choose} value="React">
-                    React
-                  </OptionBtn>
-
-                  <OptionBtn onClick={choose} value="Java">
-                    Java
-                  </OptionBtn>
-
-                  <OptionBtn onClick={choose} value="Spring">
-                    Spring
-                  </OptionBtn>
-
-                  <OptionBtn onClick={choose} value="React Native">
-                    React Native
-                  </OptionBtn>
-                </OptionList>
-              </div>
-            ) : null}
-          </div>
-          <div style={{ position: "relative" }}>
-            <StSelctBtn
-              onClick={(e) => {
-                setList2((item) => !item);
-                console.log(list2);
-              }}
-            >
-              <div>{fav2}</div>
-              <div>▼</div>
-            </StSelctBtn>
-            {list2 ? (
-              <OptionList>
-                <OptionBtn onClick={choose2} value="React">
-                  React
-                </OptionBtn>
-                <OptionBtn onClick={choose2} value="Java">
-                  Java
-                </OptionBtn>
-                <OptionBtn onClick={choose2} value="Spring">
-                  Spring
-                </OptionBtn>
-                <OptionBtn onClick={choose2} value="React Native">
-                  React Native
-                </OptionBtn>
-              </OptionList>
-            ) : null}
-          </div>
-        </div> */}
-      {/* </div> */}
     </>
   );
 }
-
-// {favorite}▼
 
 const Box = styled.div`
   display: flex;
@@ -190,30 +115,6 @@ const StInput = styled.input`
   height: 40px;
   border-radius: 10px;
   border: 1px solid black;
-`;
-
-const StSelctBtn = styled.button`
-  width: 300px;
-  height: 40px;
-  display: flex;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  background-color: white;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const OptionList = styled.div`
-  width: 300px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  background-color: white;
-  margin-top: 10px;
-  position: ${(props) => (props.visible ? "absolute" : null)};
-  z-index: ${(props) => (props.visible ? "100" : null)};
 `;
 
 export default App;

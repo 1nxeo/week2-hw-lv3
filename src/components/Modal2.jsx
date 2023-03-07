@@ -1,6 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
+function Modal2({ modal, setModal }) {
+  const closeModal = (e) => {
+    setModal(false);
+  };
+
+  const handleClickOutside = (event) => {
+    if (event.target === event.currentTarget) {
+      setModal(false);
+    }
+  };
+
+  return (
+    <>
+      <StModal onClick={handleClickOutside}>
+        <ModalSection>
+          <CloseBtn onClick={closeModal}>X</CloseBtn>
+          <p>외부영역 누르면 닫게만드는건 더힘들구나. 진짜 죽을수도있겠다.</p>
+        </ModalSection>
+        <label></label>
+      </StModal>
+    </>
+  );
+}
+
 const StModal = styled.div`
   position: fixed;
   top: 0;
@@ -32,29 +56,5 @@ const CloseBtn = styled.button`
   background-color: gray;
   border: 1px solid transparent;
 `;
-
-function Modal2({ modal, setModal }) {
-  const closeModal = (e) => {
-    setModal(false);
-  };
-
-  const handleClickOutside = (event) => {
-    if (event.target === event.currentTarget) {
-      setModal(false);
-    }
-  };
-
-  return (
-    <>
-      <StModal onClick={handleClickOutside}>
-        <ModalSection>
-          <CloseBtn onClick={closeModal}>X</CloseBtn>
-          <p>외부영역 누르면 닫게만드는건 더힘들구나. 진짜 죽을수도있겠다.</p>
-        </ModalSection>
-        <label></label>
-      </StModal>
-    </>
-  );
-}
 
 export default Modal2;
