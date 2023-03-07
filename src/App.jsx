@@ -11,13 +11,14 @@ function App() {
   // Input
   const [name, setName] = useState("");
   const [num, setNum] = useState(0);
+  const [num2, setNum2] = useState(0);
   const changeNum = (e) => {
     const val = e.target.value;
     const removedCommaValue = Number(val.replaceAll(",", ""));
     setNum(removedCommaValue.toLocaleString());
   };
   const savedAlarm = (e) => {
-    alert(`name : ${name}, price : ${num}`);
+    alert(`name : ${name}, price : ${parseInt(num.replace(",", ""))}`);
   };
 
   //Modal
@@ -34,21 +35,9 @@ function App() {
   const [list, setList] = useState(false);
   const [fav, setFav] = useState("리액트");
 
-  const choose = (e) => {
-    setFav(e.target.value);
-    console.log(e.target.value);
-    setList(false);
-  };
-
   //select #2
   const [list2, setList2] = useState(false);
   const [fav2, setFav2] = useState("리액트");
-
-  const choose2 = (e) => {
-    setFav2(e.target.value);
-    console.log(e.target.value);
-    setList2(false);
-  };
 
   return (
     <>
@@ -98,7 +87,6 @@ function App() {
           borderRadius: "10px",
           margin: "10px",
           overflow: "hidden",
-          // position: "relative",
         }}
       >
         <h1>Select</h1>
