@@ -19,6 +19,8 @@ function App() {
   };
   const savedAlarm = (e) => {
     alert(`name : ${name}, price : ${num.replaceAll(",", "")}`);
+    setName("");
+    setNum(0);
   };
 
   //Modal
