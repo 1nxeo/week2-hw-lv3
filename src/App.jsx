@@ -4,8 +4,8 @@ import Modal from "./components/Modal";
 import Modal2 from "./components/Modal2";
 import styled from "styled-components";
 import { VscBellDot, VscChevronRight } from "react-icons/vsc";
-import OptionBtn from "./components/OptionBtn";
 import Dropdown from "./components/Dropdown";
+import Dropdown2 from "./components/Dropdown2";
 
 function App() {
   // Input
@@ -98,24 +98,13 @@ function App() {
           borderRadius: "10px",
           margin: "10px",
           overflow: "hidden",
-          position: "relative",
+          // position: "relative",
         }}
       >
         <h1>Select</h1>
         <div style={{ display: "flex", gap: "10px" }}>
-          <Dropdown
-            list={list}
-            setList={setList}
-            fav={fav}
-            setFav={setFav}
-            style={{
-              position: "absolute",
-              top: "-20px",
-              left: "0",
-              zIndex: "2",
-            }}
-          />
-          <Dropdown
+          <Dropdown list={list} setList={setList} fav={fav} setFav={setFav} />
+          <Dropdown2
             list={list2}
             setList={setList2}
             fav={fav2}

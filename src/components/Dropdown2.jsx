@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Dropdown = ({ list, setList, fav, setFav }) => {
+const Dropdown2 = ({ list, setList, fav, setFav }) => {
   const choose = (e) => {
     setFav(e.target.value);
     console.log(e.target.value);
@@ -54,7 +54,6 @@ const DropdownButton = styled.button`
 
 const DropdownContent = styled.div`
   width: 300px;
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,4 +143,4 @@ const DropdownItem = styled.button`
 //   }
 // `;
 
-export default Dropdown;
+export default Dropdown2;
